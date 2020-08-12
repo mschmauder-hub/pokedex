@@ -1,8 +1,7 @@
 import React from "react";
-import bulbasaur from "../assets/bulbasaur.svg";
 
-function ListItemIcon() {
-  return <img className="listItem__image" src={bulbasaur} alt="bulsaur"></img>;
+function ListItemIcon({ imgSrc, altText }) {
+  return <img className="listItem__image" src={imgSrc} alt={altText}></img>;
 }
 
 export default ListItemIcon;

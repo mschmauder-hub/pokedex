@@ -2,15 +2,19 @@
   display: flex;
   text-align: center;
   align-items: center;
-  border-bottom: grey solid 1px;
+  border-bottom: rgb(230, 230, 230) solid 1px;
+  padding: 10px;
+  text-decoration: none;
+  color: inherit;
 }
 .listItem__image {
-  height: 50px;
-  padding-left: 10px;
+  width: 2.2em;
+  height: 2.2em;
+  object-fit: contain;
 }
-
-.text {
-  flex-grow: 1;
-  text-align: left;
-  margin-left: 20px;
+.listItem > * {
+  margin-right: 15px;
+}
+.listItem > :last-child {
+  margin-right: 0;
 }

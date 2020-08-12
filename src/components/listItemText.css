@@ -1,0 +1,13 @@
+.listItem__text {
+  flex-grow: 1;
+  text-align: left;
+}
+
+.listItem__text-primary {
+  font-size: 16px;
+  display: block;
+}
+.listItem__text-secondary {
+  font-size: 14px;
+  color: rgb(182, 182, 182);
+}

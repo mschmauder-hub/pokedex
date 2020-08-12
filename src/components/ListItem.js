@@ -1,13 +1,11 @@
 import React from "react";
-import ListItemIcon from "./ListItemIcon";
-import ListItemText from "./listItemText";
+
 import "./listItem.css";
 
-const ListItem = (props) => {
+const ListItem = ({ href, children }) => {
   return (
-    <a className="listItem">
-      <ListItemIcon />
-      <ListItemText children={props.children} />
+    <a href={href} className="listItem">
+      {children}
     </a>
   );
 };
