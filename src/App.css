@@ -1,0 +1,19 @@
+.app {
+  height: 100vh;
+  background: red;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+.app__header {
+  margin: 10px;
+  display: grid;
+  place-items: center;
+}
+.app__searchBar {
+  border: none;
+}
+
+.app__pokeList {
+  justify-self: stretch;
+  background: var(--bg-color);
+}

@@ -1,0 +1,16 @@
+.listItem {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  border-bottom: grey solid 1px;
+}
+.listItem__image {
+  height: 50px;
+  padding-left: 10px;
+}
+
+.text {
+  flex-grow: 1;
+  text-align: left;
+  margin-left: 20px;
+}
