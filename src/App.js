@@ -4,7 +4,20 @@ import List from "./components/List";
 import ListItemIcon from "./components/ListItemIcon";
 import ListItemText from "./components/ListItemText";
 import ListItem from "./components/ListItem";
-import bulbasaur from "./assets/bulbasaur.svg";
+
+const bulbasaur = {
+  name: "Bulbasaur",
+  imgSrc: "https://img.pokemondb.net/artwork/large/bulbasaur.jpg",
+  id: "001",
+  link: "#bulbasaur",
+};
+const ivysaur = {
+  name: "Ivysaur",
+  imgSrc: "https://img.pokemondb.net/artwork/large/ivysaur.jpg",
+  id: "002",
+  link: "#ivysaur",
+};
+const pokemons = [bulbasaur, ivysaur];
 
 function App() {
   return (
@@ -13,36 +26,16 @@ function App() {
         <span>Pokedex </span>
         <input className="app__searchBar" placeholder="input" />
       </header>
-
       <main className="app__pokeList colorful-border">
         <List>
-          <ListItem href="#">
-            <ListItemIcon imgSrc={bulbasaur} altText="bulbasaur" />
-            <ListItemText primary="Bulbasaur" secondary="#001" />
-          </ListItem>
-          <ListItem href="#">
-            <ListItemIcon imgSrc={bulbasaur} altText="bulbasaur" />
-            <ListItemText primary="Bulbasaur" secondary="#001" />
-          </ListItem>
-          <ListItem href="#">
-            <ListItemIcon imgSrc={bulbasaur} altText="bulbasaur" />
-            <ListItemText primary="Bulbasaur" secondary="#001" />
-          </ListItem>
-          <ListItem href="#">
-            <ListItemIcon imgSrc={bulbasaur} altText="bulbasaur" />
-            <ListItemText primary="Bulbasaur" secondary="#001" />
-          </ListItem>
-          <ListItem href="#">
-            <ListItemIcon imgSrc={bulbasaur} altText="bulbasaur" />
-            <ListItemText primary="Bulbasaur" secondary="#001" />
-          </ListItem>
-          <ListItem href="#">
-            <ListItemIcon imgSrc={bulbasaur} altText="bulbasaur" />
-            <ListItemText primary="Bulbasaur" secondary="#001" />
-          </ListItem>
+          {pokemons.map((pokemon) => (
+            <ListItem key={pokemon.id} href={pokemon.link}>
+              <ListItemIcon imgSrc={pokemon.imgSrc} altText={pokemon.name} />
+              <ListItemText primary={pokemon.name} secondary={pokemon.id} />
+            </ListItem>
+          ))}
         </List>
       </main>
-
       <footer>Footer</footer>
     </div>
   );
