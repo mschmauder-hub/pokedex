@@ -1,0 +1,20 @@
+.listItem {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  border-bottom: rgb(230, 230, 230) solid 1px;
+  padding: 10px;
+  text-decoration: none;
+  color: inherit;
+}
+.listItem__image {
+  width: 2.2em;
+  height: 2.2em;
+  object-fit: contain;
+}
+.listItem > * {
+  margin-right: 15px;
+}
+.listItem > :last-child {
+  margin-right: 0;
+}
