@@ -32,7 +32,10 @@ function Pokemons() {
           {loading && <LoadingScreen />}
 
           {pokemons?.map((pokemon) => (
-            <ListItem key={pokemon.id} href={pokemon.link}>
+            <ListItem
+              key={pokemon.id}
+              href={`/pokemons/${pokemon.link.toLowerCase()}`}
+            >
               <ListItemIcon imgSrc={pokemon.imgSrc} altText={pokemon.name} />
               <ListItemText primary={pokemon.name} secondary={pokemon.id} />
             </ListItem>
