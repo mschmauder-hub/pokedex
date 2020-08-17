@@ -26,3 +26,7 @@
   border-width: 5px 0;
   border-image-source: var(--bg-border);
 }
+
+footer {
+  padding: 10px;
+}

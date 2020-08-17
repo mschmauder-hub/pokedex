@@ -1,47 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./App.css";
-import List from "./components/List";
-import ListItemIcon from "./components/ListItemIcon";
-import ListItemText from "./components/ListItemText";
-import ListItem from "./components/ListItem";
-import { fetchPokemons } from "./api/pokemonApi";
-import { LoadingScreen } from "./components/LoadingScreen";
+import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
+import Pokemons from "./pages/Pokemons";
 
 function App() {
-  const [pokemons, setPokemons] = useState(null);
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    async function setPokemon() {
-      setLoading(true);
-
-      const allPokemons = await fetchPokemons();
-      setPokemons(allPokemons);
-      setLoading(false);
-    }
-    setPokemon();
-  }, []);
-
   return (
-    <div className="app">
-      <header className="app__header">
-        <span>Pokedex</span>
-        <input className="app__searchBar" placeholder="input" />
-      </header>
-      <main className="app__pokeList colorful-border">
-        <List>
-          {loading && <LoadingScreen />}
-
-          {pokemons?.map((pokemon) => (
-            <ListItem key={pokemon.id} href={pokemon.link}>
-              <ListItemIcon imgSrc={pokemon.imgSrc} altText={pokemon.name} />
-              <ListItemText primary={pokemon.name} secondary={pokemon.id} />
-            </ListItem>
-          ))}
-        </List>
-      </main>
-      <footer>Footer</footer>
-    </div>
+    <Router>
+      <div className="app">
+        <Switch>
+          <Route path="/pokemons">
+            <Pokemons />
+          </Route>
+          <Route path="/items"></Route>
+        </Switch>
+        <footer>
+          <Link to="/pokemons">Pokemons</Link>
+          <Link to="/items">Items</Link>
+        </footer>
+      </div>
+    </Router>
   );
 }
 
