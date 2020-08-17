@@ -19,3 +19,16 @@ export async function fetchPokemons() {
 
   return uniquePokemons;
 }
+
+export async function fetchPokemon() {
+  const response = await fetch("");
+  if (!response.ok) {
+    throw new Error(response);
+  }
+  const data = await response.json();
+  const pokemon = {
+    name: data.name,
+  };
+
+  return pokemon;
+}
