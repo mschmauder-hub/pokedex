@@ -17,6 +17,7 @@
 .app__pokeList {
   justify-self: stretch;
   background: var(--bg-color);
+  overflow: auto;
 }
 
 .colorful-border {
