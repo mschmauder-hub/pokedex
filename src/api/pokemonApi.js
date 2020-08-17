@@ -11,5 +11,11 @@ export async function fetchPokemons() {
     imgSrc: pokemon.sprites.large,
     link: `#${pokemon.name.toLowerCase()}`,
   }));
-  return pokemons;
+
+  const uniquePokemons = pokemons.filter(
+    (pokemon, index) =>
+      pokemons.findIndex((other) => other.id === pokemon.id) === index
+  );
+
+  return uniquePokemons;
 }
